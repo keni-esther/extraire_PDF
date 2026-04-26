@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparaison : Camelot, pdfplumber & tabula-py - Extraction de tableaux PDF</title>
+     <link rel="stylesheet" href="ext.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📄 Extraction de tableaux PDF en Python</h1>
+        <p>Camelot, pdfplumber et tabula-py sont les trois bibliothèques Python incontournables pour l'extraction de tableaux à partir de PDF. Camelot est excellent pour les tables structurées, pdfplumber offre une grande précision sur les PDF complexes/textuels, et tabula-py (basé sur Java) est robuste pour les fichiers standards.</p>
+    </div>
+
+    <div class="cards-grid">
+        <!-- Camelot Card -->
+        <div class="card">
+            <div class="card-header camelot">
+                <h2>🐫 Camelot</h2>
+                <div class="tagline">"PDF Table Extraction for Humans"</div>
+            </div>
+            <div class="card-content">
+                <div class="section-title">💪 Forces</div>
+                <p>Très efficace pour les PDF basés sur le texte avec des structures de tableau claires (simples ou complexes).</p>
+                
+                <div class="section-title">⚙️ Méthodes</div>
+                <p>Propose deux <strong>"flavors"</strong> : <code>lattice</code> (pour les lignes de grille) et <code>stream</code> (pour les tableaux sans lignes visibles, basés sur l'espacement).</p>
+                
+                <div class="section-title">📤 Sorties</div>
+                <p>Exporte facilement en <strong>CSV, JSON, Excel, HTML, Pandas DataFrame</strong>.</p>
+                
+                <div class="section-title">👁️ Visualisation</div>
+                <p>Permet de visualiser les zones détectées pour déboguer.</p>
+                
+                <div class="section-title">📦 Installation</div>
+                <div class="install-code">pip install camelot-py[cv]</div>
+                <p style="font-size:0.85rem; color:#666;">(nécessite souvent Ghostscript)</p>
+            </div>
+        </div>
+
+        <!-- pdfplumber Card -->
+        <div class="card">
+            <div class="card-header pdfplumber">
+                <h2>🔍 pdfplumber</h2>
+                <div class="tagline">Précision extrême</div>
+            </div>
+            <div class="card-content">
+                <div class="section-title">💪 Forces</div>
+                <p>Extrêmement précis pour l'extraction de texte et la localisation de tableaux, particulièrement lorsque la mise en page est complexe.</p>
+                
+                <div class="section-title">🎯 Utilisation</div>
+                <p>Offre un contrôle très fin sur les <strong>boîtes englobantes (bounding boxes)</strong> et les métadonnées.</p>
+                
+                <div class="section-title">📄 Idéal pour</div>
+                <p>Des PDF où les tableaux ne sont pas parfaitement délimités ou nécessitent une analyse précise des coordonnées.</p>
+                
+                <div class="section-title">📦 Installation</div>
+                <div class="install-code">pip install pdfplumber</div>
+                <p style="font-size:0.85rem; color:#666;">(basé sur pdfminer.six)</p>
+            </div>
+        </div>
+
+        <!-- Tabula-py Card -->
+        <div class="card">
+            <div class="card-header tabula">
+                <h2>📊 Tabula-py</h2>
+                <div class="tagline">Version Python de Tabula</div>
+            </div>
+            <div class="card-content">
+                <div class="section-title">💪 Forces</div>
+                <p>Version Python de l'outil Tabula très populaire. <strong>Robuste, rapide</strong> et facile à utiliser.</p>
+                
+                <div class="section-title">📈 Usage</div>
+                <p>Idéal pour extraire des tables en <strong>DataFrames Pandas</strong>.</p>
+                
+                <div class="section-title">✨ Fonctionnalités</div>
+                <p>Permet de spécifier des pages et d'utiliser des options pour les tableaux avec ou sans lignes.</p>
+                
+                <div class="section-title">📦 Installation</div>
+                <div class="install-code">pip install tabula-py</div>
+                <p style="font-size:0.85rem; color:#666;">(nécessite <strong>Java</strong> sur la machine)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tableau comparatif rapide -->
+    <div class="comparison-section">
+        <h3>📊 Comparaison rapide</h3>
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Caractéristique</th>
+                        <th>Camelot</th>
+                        <th>Tabula-py</th>
+                        <th>Pdfplumber</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Idéal pour</td>
+                        <td>Tables structurées</td>
+                        <td>Tables standards</td>
+                        <td>Tables complexes / Texte</td>
+                    </tr>
+                    <tr>
+                        <td>Basé sur</td>
+                        <td>Python</td>
+                        <td>Java (Tabula)</td>
+                        <td>Python (pdfminer.six)</td>
+                    </tr>
+                    <tr>
+                        <td>Précision</td>
+                        <td class="check-good">Haute (avec réglages)</td>
+                        <td class="check-medium">Bonne</td>
+                        <td class="check-high">Très haute</td>
+                    </tr>
+                    <tr>
+                        <td>Détection</td>
+                        <td>Lattice / Stream</td>
+                        <td>Lattice / Stream</td>
+                        <td>Inspection visuelle</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Guide pour choisir -->
+    <div class="choice-section">
+        <h4>✅ Comment choisir ?</h4>
+        <div class="choice-grid">
+            <div class="choice-card">
+                <strong>🐫 Camelot</strong>
+                Idéal si vous cherchez une interface simple et puissante pour des tables classiques. Parfait pour les PDF avec lignes de grille claires.
+            </div>
+            <div class="choice-card">
+                <strong>📊 Tabula-py</strong>
+                Valeur sûre pour l'extraction rapide, très robuste sur les fichiers standards. Idéal quand la rapidité d'implémentation prime.
+            </div>
+            <div class="choice-card">
+                <strong>🔍 Pdfplumber</strong>
+                Meilleur choix pour des PDF avec une mise en page difficile où le texte et les tableaux sont mélangés. Offre une précision inégalée.
+            </div>
+        </div>
+        <hr>
+        <p style="text-align:center; margin-top:15px;">
+            💡 <strong>Astuce :</strong> Pour des résultats optimaux, n'hésitez pas à combiner ces outils selon la structure de vos documents.
+        </p>
+    </div>
+
+    <div class="footer-note">
+        <p>🔧 Camelot · pdfplumber · tabula-py — Les trois bibliothèques Python incontournables pour l'extraction de tableaux à partir de PDF</p>
+    </div>
+</div>
+</body>
+</html>
